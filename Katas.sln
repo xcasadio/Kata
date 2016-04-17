@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordWrap", "WordWrap\KataWordWrap\WordWrap.csproj", "{5F8B0E66-EF6D-493F-9A90-EBE0E58987FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordWrap", "WordWrap\WordWrap.csproj", "{5F8B0E66-EF6D-493F-9A90-EBE0E58987FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FooBarQix", "FooBarQix\FooBarQix.csproj", "{AF1EB12A-9A6C-4ADE-90AA-1404422C68C2}"
 EndProject
