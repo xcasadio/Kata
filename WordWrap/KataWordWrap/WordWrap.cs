@@ -1,6 +1,6 @@
 namespace KataWordWrap
 {
-    static class KataWordWrap
+    static class WordWrap
     {
         public static string Wrap(string text, int columnNumber)
         {

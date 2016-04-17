@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F8B0E66-EF6D-493F-9A90-EBE0E58987FC}</ProjectGuid>
+    <ProjectGuid>{AF1EB12A-9A6C-4ADE-90AA-1404422C68C2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KataWordWrap</RootNamespace>
-    <AssemblyName>KataWordWrap</AssemblyName>
+    <RootNamespace>FooBarQix</RootNamespace>
+    <AssemblyName>FooBarQix</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -48,8 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KataWordWrap.cs" />
-    <Compile Include="KataWordWrapTests.cs" />
+    <Compile Include="FooBarQixTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
