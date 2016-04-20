@@ -48,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Range.cs" />
     <Compile Include="RangeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RangeType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
