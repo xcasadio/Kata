@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="FooBarQix.cs" />
     <Compile Include="FooBarQixTests.cs" />
+    <Compile Include="IntExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

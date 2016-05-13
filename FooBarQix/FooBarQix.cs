@@ -14,12 +14,23 @@ namespace FooBarQix
 
             foreach (var token in Tokens)
             {
-                if (number.Contains(token.Key.ToString())) stringBuilder.Append(token.Value);
-                if (numberParsed % token.Key == 0) stringBuilder.Append(token.Value);
+                if (ContainsNumber(number, token.Key)) stringBuilder.Append(token.Value);
+                if (numberParsed.IsDivisibleBy(token.Key)) stringBuilder.Append(token.Value);
             }
 
             var formattedString = stringBuilder.ToString();
-            return string.IsNullOrEmpty(formattedString) ? number : formattedString;
+
+            return IsNoRuleApply(formattedString) ? number : formattedString;
+        }
+
+        private static bool IsNoRuleApply(string formattedString)
+        {
+            return string.IsNullOrEmpty(formattedString);
+        }
+
+        private static bool ContainsNumber(string number, int token)
+        {
+            return number.Contains(token.ToString());
         }
     }
 }
