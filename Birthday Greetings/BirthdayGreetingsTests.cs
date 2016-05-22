@@ -93,9 +93,12 @@ One way to make code more testable is to use Dependency Injection. This means th
             var dateTimeNow = DateTime.Now;
             var mail = "John@john.com";
 
-            personDataProvider.Load().Returns(new [] { new PersonData {LastName = "John", Birthday = dateTimeNow, Mail = mail} });
+            personDataProvider.Load().Returns(new[]
+            {
+                new PersonData {LastName = "John", Birthday = dateTimeNow, Mail = mail}
+            });
 
-            birthdayService.SendGreetings(DateTime.Now);
+            birthdayService.SendGreetings(dateTimeNow);
 
             messagePublisher.Received(1).Publish(mail, "Happy birthday!", "Happy birthday, dear John!");
         }
@@ -104,23 +107,20 @@ One way to make code more testable is to use Dependency Injection. This means th
     public class BirthdayService
     {
         private readonly IMessagePublisher _messagePublisher;
-        private readonly IEnumerable<PersonData> _persons;
+        private readonly IPersonDataProvider _personDataProvider;
 
         public BirthdayService(IPersonDataProvider personDataProvider, IMessagePublisher messagePublisher)
         {
             _messagePublisher = messagePublisher;
-            _persons = personDataProvider.Load();
+            _personDataProvider = personDataProvider;
         }
 
         public void SendGreetings(DateTime dateTime)
         {
-            foreach (var personData in _persons)
+            foreach (var personData in _personDataProvider.Load().Where(personData => dateTime.Day == personData.Birthday.Day
+                                                                                      && dateTime.Year == personData.Birthday.Year))
             {
-                if (dateTime.Day == personData.Birthday.Day
-                    && dateTime.Year == personData.Birthday.Year)
-                {
-                    _messagePublisher.Publish(personData.Mail, "Happy birthday!", "Happy birthday, dear " + personData.LastName + "!");
-                }
+                _messagePublisher.Publish(personData.Mail, "Happy birthday!", "Happy birthday, dear " + personData.LastName + "!");
             }
         }
     }
